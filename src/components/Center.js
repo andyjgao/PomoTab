@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import Control from "./Control";
+import Timer from "./Timer";
 export default function Center() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <>
+      <Timer />
+      
+      <Control />
+    </>
+  );
 }
