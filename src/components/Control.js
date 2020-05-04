@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 import {
   createMuiTheme,
   withStyles,
@@ -15,21 +16,46 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles((theme) => ({
-start: {
+  start: {
     margin: theme.spacing(1),
-    color: "#FFFFFF"
   },
-
+  whiteFont: {
+    color: "#FFFFFF",
+  },
 }));
-export default function Timer() {
+export default function Timer({ start, handleStart, handleReset }) {
   const classes = useStyles();
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Button color="primary" className={classes.start} variant="contained">
-          Start
+        {!start && (
+          <Button
+            color="primary"
+            onClick={handleStart}
+            className={classes.start}
+            variant="outlined"
+          >
+            Start
+          </Button>
+        )}
+        {start && (
+          <Button
+            color="primary"
+            onClick={handleStart}
+            className={`${classes.start} ${classes.whiteFont}`}
+            variant="contained"
+          >
+            Pause
+          </Button>
+        )}
+        <Button
+          color="secondary"
+          onClick={handleReset}
+          className={classes.start}
+          variant="outlined"
+        >
+          Reset
         </Button>
-        <Button color="secondary" variant="outlined">Reset</Button>
       </ThemeProvider>
     </div>
   );
