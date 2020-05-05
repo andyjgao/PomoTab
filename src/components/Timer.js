@@ -22,7 +22,7 @@ export default function Control({ time }) {
       <Grid container spacing={1}>
         <Unit num={timeArray[0]} />
         <Unit num={timeArray[1]} />
-        <Typography className={classes.paper} variant="h2" component="h2">
+        <Typography className={classes.paper} variant="h1" component="h2">
           :
         </Typography>
         <Unit num={timeArray[2]} />

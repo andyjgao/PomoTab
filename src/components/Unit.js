@@ -20,7 +20,7 @@ export default function Unit({ num }) {
   return (
     <Grid item>
       <Paper className={classes.paper}>
-        <Typography variant="h2" component="h2">
+        <Typography variant="h1" component="h2">
           {num}
         </Typography>
       </Paper>
